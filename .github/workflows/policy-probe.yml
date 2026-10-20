@@ -1,0 +1,12 @@
+name: policy-probe
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harmless probe
+        run: printf '%s\n' 'h1-actions-policy-canary-20261020'
